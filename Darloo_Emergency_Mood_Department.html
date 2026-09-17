@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Darloo's Emergency Mood Department 💜</title>
+<style>
+:root{
+  --bg:#100b18; --card:rgba(35,22,45,.84); --lav:#dca7ff; --pink:#ffb6df;
+  --text:#f8efff; --muted:#cdbbd5; --line:rgba(255,255,255,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;color:var(--text);font-family:Georgia,"Times New Roman",serif;
+  background:
+    radial-gradient(circle at 20% 10%,rgba(160,95,220,.24),transparent 30%),
+    radial-gradient(circle at 85% 35%,rgba(255,120,210,.12),transparent 30%),
+    linear-gradient(145deg,#100b18,#21142a 48%,#0e0a14);
+  min-height:100vh;overflow-x:hidden;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.35;
+  background-image:radial-gradient(#fff 1px,transparent 1px);
+  background-size:42px 42px;
+}
+.wrap{width:min(760px,92%);margin:auto;padding:24px 0 70px;position:relative}
+.hero{text-align:center;padding:34px 10px 24px}
+.pill{display:inline-block;padding:8px 13px;border:1px solid var(--line);border-radius:999px;
+  background:rgba(255,255,255,.06);font:600 12px Arial,sans-serif;letter-spacing:.8px}
+h1{font-size:clamp(34px,8vw,58px);line-height:1.02;margin:20px 0 12px}
+.hero p{font-size:18px;line-height:1.75;color:var(--muted);max-width:620px;margin:0 auto}
+.btn{
+  border:0;border-radius:999px;padding:15px 23px;margin-top:22px;
+  background:linear-gradient(135deg,#d7a0ff,#f5a9dd);color:#21152a;
+  font-weight:800;font-size:16px;cursor:pointer;box-shadow:0 12px 35px rgba(220,150,255,.2)
+}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:28px;
+  padding:24px;margin:18px 0;box-shadow:0 20px 70px rgba(0,0,0,.22);
+  backdrop-filter:blur(12px)
+}
+.card h2{margin:0 0 8px;font-size:28px}
+.sub{color:var(--muted);line-height:1.6;margin-top:0}
+.photo{
+  width:100%;height:290px;object-fit:cover;border-radius:20px;display:block;margin:18px 0;
+  background:linear-gradient(135deg,#3c2551,#1a1221)
+}
+.photo-note{font:12px Arial,sans-serif;color:#a99aae;text-align:right;margin-top:-10px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.need{
+  border:1px solid var(--line);background:rgba(255,255,255,.045);border-radius:20px;
+  padding:18px 14px;cursor:pointer;color:var(--text);text-align:left;font:inherit;
+  min-height:88px;transition:.2s
+}
+.need:hover{transform:translateY(-2px);background:rgba(255,255,255,.08)}
+.need strong{display:block;font-size:17px}.need span{display:block;color:var(--muted);font:13px Arial,sans-serif;margin-top:6px}
+.answer{display:none;margin-top:15px;padding:18px;border-radius:18px;background:rgba(220,167,255,.1);
+  border:1px solid rgba(220,167,255,.18);line-height:1.8;font-size:17px}
+.check{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.07);
+  font:16px Arial,sans-serif}
+.check:last-child{border-bottom:0}
+.check input{width:21px;height:21px;accent-color:#dba2ff}
+.serotonin{text-align:center}
+#burst{min-height:50px;font-size:30px;line-height:1.5}
+.quote{font-size:24px;line-height:1.65;text-align:center;margin:10px 0}
+.letter{font-size:18px;line-height:1.9;color:#f2e5f7}
+.signature{text-align:right;color:var(--pink);font-style:italic;font-size:20px}
+.hidden{display:none}
+footer{text-align:center;color:#88768f;font:12px Arial,sans-serif;margin-top:30px}
+@media(max-width:560px){.grid{grid-template-columns:1fr}.photo{height:245px}.card{padding:20px}.quote{font-size:21px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="hero">
+    <span class="pill">PRIVATE LITTLE DEPARTMENT · OPEN ONLY WHEN NEEDED</span>
+    <h1>Darloo's Emergency<br>Mood Department 💜</h1>
+    <p>
+      Diagnosis: too much happening, too many people, too many thoughts.
+      <br><br>
+      Prescription: <b>a few quiet minutes here.</b>
+    </p>
+    <button class="btn" id="enter">I'm here 🥺</button>
+  </section>
+
+  <main id="main" class="hidden">
+    <section class="card">
+      <img class="photo" src="https://straightforwardspaces.com/content/images/2024/01/fairylightspurple.webp" alt="Dreamy purple room with fairy lights"
+           onerror="this.style.opacity='.15'">
+      <h2>First rule: you don't have to be okay.</h2>
+      <p class="letter">
+        I know there are family things and office things and probably a hundred
+        little thoughts sitting in your head at the same time.
+        <br><br>
+        I'm not going to tell you to "just relax". And I'm not going to try to
+        magically fix everything from a webpage.
+        <br><br>
+        For a few minutes, you can simply be tired, irritated, quiet, emotional,
+        or whatever you actually feel.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>What do you need right now? 🫂</h2>
+      <p class="sub">No wrong answer. Pick whichever one sounds like you.</p>
+      <div class="grid">
+        <button class="need" data-answer="hug"><strong>🫂 I need a hug</strong><span>No talking required.</span></button>
+        <button class="need" data-answer="complain"><strong>😤 I need to complain</strong><span>Complaint box is officially open.</span></button>
+        <button class="need" data-answer="someone"><strong>🥺 I just want someone</strong><span>Then stay here for a minute.</span></button>
+        <button class="need" data-answer="distract"><strong>🌸 Distract me</strong><span>Okay. I have a few tricks.</span></button>
+      </div>
+      <div class="answer" id="answer"></div>
+    </section>
+
+    <section class="card">
+      <img class="photo" src="https://i.pinimg.com/736x/9b/59/cf/9b59cf86a0f46215a7639472c73756a7.jpg" alt="Purple cozy window and city view"
+           onerror="this.style.opacity='.15'">
+      <h2>Complaint box 😑</h2>
+      <p class="sub">Tap whatever deserves today's official complaint.</p>
+      <div class="grid">
+        <button class="need complaint" data-text="Office people: 😑">Office people 😑</button>
+        <button class="need complaint" data-text="Family drama: 😵‍💫">Family drama 😵‍💫</button>
+        <button class="need complaint" data-text="Today in general: 🤦‍♂️">Today in general 🤦‍♂️</button>
+        <button class="need complaint" data-text="Everything: 💀">Literally everything 💀</button>
+      </div>
+      <div class="answer" id="complaintBox"></div>
+    </section>
+
+    <section class="card serotonin">
+      <h2>Emergency serotonin button 🌸</h2>
+      <p class="sub">Press only if medically necessary.</p>
+      <button class="btn" id="serotonin">Give me serotonin</button>
+      <div id="burst"></div>
+    </section>
+
+    <section class="card">
+      <img class="photo" src="https://i.pinimg.com/originals/69/23/e2/6923e267ec6303a47285f7e64cc8c86e.gif" alt="Cozy rainy night by a window"
+           onerror="this.style.opacity='.15'">
+      <h2>Take care of yourself first. 🧸</h2>
+      <p class="sub">Tiny things I'd remind you about if I were there.</p>
+      <label class="check"><input type="checkbox"> Had something to eat?</label>
+      <label class="check"><input type="checkbox"> Had some water?</label>
+      <label class="check"><input type="checkbox"> Rotated your nose ring? 🥺</label>
+      <label class="check"><input type="checkbox"> Gave your eyes a little break?</label>
+      <label class="check"><input type="checkbox"> Unclenched your jaw and relaxed your shoulders?</label>
+      <label class="check"><input type="checkbox"> Took one proper, slow breath?</label>
+      <p id="done" class="answer">Good. That's enough productivity from you for five minutes. Come here. 🫂</p>
+    </section>
+
+    <section class="card">
+      <h2>One thing I want you to know ❤️</h2>
+      <p class="letter">
+        I know there are things happening around you right now that I can't control
+        or magically make disappear.
+        <br><br>
+        I can't solve your family problems. I can't walk into your office and make
+        everyone's behaviour better.
+        <br><br>
+        But I can remind you of one thing.
+      </p>
+      <p class="quote">You don't have to be okay every day.</p>
+      <p class="letter">
+        Some days you're going to be tired. Some days you're going to be irritated.
+        Some days you're going to want to disappear from everyone for a while.
+        <br><br>
+        And that's okay.
+        <br><br>
+        You don't become any less lovable on those days.
+        <br><br>
+        So today, don't worry about being the happiest version of yourself.
+        Just be <b>you</b>.
+        <br><br>
+        I'll take the tired version. The irritated version. The quiet version.
+        The "don't talk to me" version.
+        <br><br>
+        <b>All of them. ❤️</b>
+      </p>
+      <p class="letter">
+        Now put the phone down for a minute, take a breath, drink some water…
+        and remember that you're loved.
+      </p>
+      <div class="signature">— Nikhil</div>
+    </section>
+  </main>
+  <footer>Made for one very specific girl who deserves a softer day. 💜</footer>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  const main=document.getElementById("main");
+  document.getElementById("enter").addEventListener("click",function(){
+    main.classList.remove("hidden");
+    this.style.display="none";
+    main.scrollIntoView({behavior:"smooth",block:"start"});
+  });
+
+  const answers={
+    hug:"Come here. 🫂 No explaining what happened. No pretending you're fine. Just imagine I've pulled you close, put your head here, and we're sitting quietly for a while. You can stay here as long as you want.",
+    complain:"Complaint officially received. 😤 You are allowed to be annoyed. Tell me everything in your head — the office nonsense, the family stuff, the tiny things that shouldn't matter but somehow do. I may not be able to fix it, but I can listen.",
+    someone:"I'm here. That's literally it. You don't have to be cheerful for me. You don't have to reply immediately. You don't have to explain everything. Somewhere, there's someone thinking, 'I hope she's okay.' 💜",
+    distract:"Okay, no serious thoughts for the next minute. Imagine I randomly appear beside you, steal one hug, make you laugh at something stupid, and then disappear again. 😌 Now press the serotonin button below."
+  };
+  const answer=document.getElementById("answer");
+  document.querySelectorAll("[data-answer]").forEach(function(btn){
+    btn.addEventListener("click",function(){
+      answer.textContent=answers[this.dataset.answer];
+      answer.style.display="block";
+    });
+  });
+
+  const cb=document.getElementById("complaintBox");
+  document.querySelectorAll(".complaint").forEach(function(btn){
+    btn.addEventListener("click",function(){
+      cb.innerHTML="<b>Complaint accepted:</b> "+this.dataset.text+
+        "<br><br>Management has been informed. Management is also annoyed on your behalf. 😤❤️";
+      cb.style.display="block";
+    });
+  });
+
+  const burst=document.getElementById("burst");
+  document.getElementById("serotonin").addEventListener("click",function(){
+    const bits=["💜","🫂","🥺","🌸","✨","❤️","😌","🦋","💗"];
+    burst.textContent=Array.from({length:18},()=>bits[Math.floor(Math.random()*bits.length)]).join(" ");
+    burst.animate(
+      [{transform:"scale(.7)",opacity:0},{transform:"scale(1.05)",opacity:1},{transform:"scale(1)",opacity:1}],
+      {duration:650,easing:"ease-out"}
+    );
+  });
+
+  const checks=document.querySelectorAll(".check input");
+  const done=document.getElementById("done");
+  checks.forEach(function(c){
+    c.addEventListener("change",function(){
+      done.style.display=[...checks].every(x=>x.checked)?"block":"none";
+    });
+  });
+});
+</script>
+</body>
+</html>
